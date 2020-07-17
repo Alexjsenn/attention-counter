@@ -1,6 +1,6 @@
 # attention-counter
 Harnessing facial detection and CNNs to count attentive people (project for APS360 at the University of Toronto 2020)
-![model-outline](modelOutline.jpg)
+![model-outline](modelOutline.png)
 
 ## Architecture
 Our full system consists of 2 parts. A pre-trained Viola Jones model and a classifier we built from scratch.
@@ -9,8 +9,8 @@ Therefore we take each identified box, crop it and resize it to allow it to pass
 The classifier takes an input of size 128x128 and returns the probability of it being a face. We then use a threshold to give a yes/no answer. The model consists of a CNN with 3 convolutional layers and 2 max pooling layers followed by a 3-layer ANN. The exact dimension reduction and architecture can be seen in figure 6.
 
 ## Training our CNN
-![Layer-diagram](CNNlayers.jpg)
-![training-results](training-results.jpg)
+![Layer-diagram](CNNlayers.png)
+![training-results](training-results.png)
 
 When we began tuning hyperparameters we noticed sometimes the model had trouble learning, and realized given the time and computation constraints, training on a smaller subset allowed us to better tune the model. This was done while ensuring it would not lose the ability to generalize correctly.
 Training the model with only 2000 images, holding out 200 for validation and the other 11 800 for testing, we obtained good results that made us confident the model was performing well on the whole dataset. Final accuracy values were ~98% for the training set, ~96% for the validation, and just over 95% for the large test set.
@@ -21,5 +21,8 @@ Taking an average of the error as a percentage of the true face count, Viola Jon
 When working with our full system on this unseen data, our classifier had an accuracy of ~94%.
 
 The following are some examples of the results.
-![results1](results1.jpg)
-![results2](results2.jpg)
+![results1](results1.png)
+![results2](results2.png)
+
+## Ethical Considerations
+There are strong ethical considerations that must be taken when gathering images of individuals. As the need for information grows in today’s society there is a demand to have everything recorded or under constant surveillance. This constant tradeoff between information and privacy is always a difficult balance. Our system does require images where people would appear, even possibly in a public setting. However, there are two factors that make our system less invasive. First of all no facial recognition is performed, meaning the identity of anyone in the image is safe. And in second place, once the image is processed and a count has been determined, the image can be discarded and there would be no way of reconstructing the input image solely based on the results. However, as with any product, the transparency of these features are essential to gain public approval and trust.
