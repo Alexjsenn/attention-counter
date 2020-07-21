@@ -2,6 +2,12 @@
 Harnessing facial detection and CNNs to count attentive people (project for APS360 at the University of Toronto 2020)
 ![model-outline](modelOutline.png)
 
+### Team:
+Alexander Senn
+Alp Tarim
+Joshua Pius
+Mohamed Ahmed
+
 ## Architecture
 Our full system consists of 2 parts. A pre-trained Viola Jones model and a classifier we built from scratch.
 Our system first starts with the viola jones algorithm which is implemented using the opencv library. We use this pre-trained model that detects the locations of the faces in an image. However, this algorithm tends to detect a high number of false positives.
