@@ -3,10 +3,10 @@ Harnessing facial detection and CNNs to count attentive people (project for APS3
 ![model-outline](modelOutline.png)
 
 ### Team:
-Alexander Senn
-Alp Tarim
-Joshua Pius
-Mohamed Ahmed
+* Alexander Senn
+* Alp Tarim
+* Joshua Pius
+* Mohamed Ahmed
 
 ## Architecture
 Our full system consists of 2 parts. A pre-trained Viola Jones model and a classifier we built from scratch.
